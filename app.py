@@ -26,16 +26,34 @@ import streamlit as st
 # --------------------------------------------------------------------------------------
 # PATHS (app.py lives in app/, so go up ONE level to reach the project root)
 # --------------------------------------------------------------------------------------
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+BASE_DIR = Path(__file__).resolve().parent
+
 MODELS_DIR = BASE_DIR / "models"
+DATASET_DIR = BASE_DIR / "dataset"
+IMAGES_DIR = BASE_DIR / "images"
+
+DATASET_PATH = DATASET_DIR / "Employee-Attrition.csv"
 
 MODEL_PATHS = {
+    "Random Forest": MODELS_DIR / "random_forest.pkl",
     "Logistic Regression": MODELS_DIR / "logistic_regression.pkl",
     "Decision Tree": MODELS_DIR / "decision_tree.pkl",
-    "Random Forest": MODELS_DIR / "random_forest.pkl",
 }
-COLUMNS_PATH = MODELS_DIR / "model_columns.pkl"   # matches your actual saved filename
-SCALER_PATH = MODELS_DIR / "scaler.pkl"           # needed for Logistic Regression
+
+COLUMNS_PATH = MODELS_DIR / "model_columns.pkl"
+SCALER_PATH = MODELS_DIR / "scaler.pkl"
+# BASE_DIR = Path(__file__).resolve().parent.parent
+# MODELS_DIR = BASE_DIR / "models"
+
+# MODEL_PATHS = {
+#     "Logistic Regression": MODELS_DIR / "logistic_regression.pkl",
+#     "Decision Tree": MODELS_DIR / "decision_tree.pkl",
+#     "Random Forest": MODELS_DIR / "random_forest.pkl",
+# }
+# COLUMNS_PATH = MODELS_DIR / "model_columns.pkl"   # matches your actual saved filename
+# SCALER_PATH = MODELS_DIR / "scaler.pkl"           # needed for Logistic Regression
 
 BEST_MODEL_NAME = "Logistic Regression"
 BEST_MODEL_ACCURACY = 86.05
